@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require('mongoose');
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const loginRoute = require("./routes/login");
 const registerRoute = require("./routes/register");
 const addbook = require("./routes/addbooks");
