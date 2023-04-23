@@ -1,11 +1,12 @@
 const jwt = require("jsonwebtoken")
-const User = require("../models/user")
+const User = require("../Models/user")
 
 const verify =(req, res, next)=>{
+
     const authorizationHeader = req.headers.authorization
     if(authorizationHeader){
         const token = authorizationHeader
-        jwt.verify(token,'Booksapp', async(err, payload)=>{
+        jwt.verify(token, 'BooksApp', async(err, payload)=>{
             try{
                 if(err){
                     return res.status(401).json({error: "Unauthorized!"})

@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require('mongoose');
-const bodyParser = require("body-parser");
 const loginRoute = require("./routes/login");
 const registerRoute = require("./routes/register");
 const addbook = require('./routes/addbooks')
@@ -32,7 +31,6 @@ async function getConnection() {
 }
 
 getConnection();
-app.use(bodyParser())
 app.use(cors());
 app.use(express.json());
 app.use(loginRoute)
@@ -90,4 +88,3 @@ module.exports = app;
 // // router.use(express.urlencoded())
 
 // module.exports= router
-

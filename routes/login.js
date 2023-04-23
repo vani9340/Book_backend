@@ -1,20 +1,21 @@
 const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcrypt')
-const User = require('../models/user')
+const userModel = require("../Models/user")
 const jwt = require("jsonwebtoken")
-
 //jwt Secret key
-const secret = "Booksapp"
+const secret = "BooksApp"
 //Middle wares
-router.use(express.json())
+// router.use(express.json())
 // router.use(express.urlencoded())
+router.use(express.urlencoded({extended: true}));
+router.use(express.json())
 
 //post method
 router.post("/login", async(req, res)=>{    
     try{   
         const {email, password} = req.body;
-        const data = await User.findOne({email:email})
+        const data = await userModel.findOne({email:email})
         if(!data){
             return res.status(404).json({
                 status:"Failed",
