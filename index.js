@@ -18,7 +18,7 @@ const app = express();
 // const router= express.Router()
 //-------------------------secret key--------------------------------
 // const secret = "Booksapp"
-const port = 4040;
+const port = process.env.PORT||4040;
 
 const uri = 'mongodb+srv://shivani:shivani@cluster0.jtcimej.mongodb.net/?retryWrites=true&w=majority';
 
