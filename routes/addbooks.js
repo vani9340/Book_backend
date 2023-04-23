@@ -1,13 +1,13 @@
 const express=require('express');
 const Books = require('../Models/books');
-const verify = require('../authorization/auth');
+// const verify = require('../authorization/auth');
 // const router= express.Router()
 // router.use(express.json())
 const app = express()
 app.use(express.json())
 
-  app.post('/addbook',verify,async(req, res) => {
-    const userID = req.body.userId
+  app.post('/addbook',async(req, res) => {
+    // const userID = req.body.userId
     const { title, isbn, author,description,publisher,publishDate  } = req.body;
 
   // Validate request body
