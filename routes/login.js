@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcrypt')
-const User = require('../Models/user')
+const User = require('../models/user')
 const jwt = require("jsonwebtoken")
 
 //jwt Secret key
 const secret = "Booksapp"
 //Middle wares
 router.use(express.json())
-router.use(express.urlencoded())
+// router.use(express.urlencoded())
 
 //post method
 router.post("/login", async(req, res)=>{    
