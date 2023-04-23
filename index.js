@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const loginRoute = require("./routes/login");
 const registerRoute = require("./routes/register");
-const addbook = require("./routes/addbooks");
+const addbook = require('./routes/addbooks')
 
 
 const app = express();
@@ -32,7 +32,7 @@ async function getConnection() {
 }
 
 getConnection();
-
+app.use(bodyParser())
 app.use(cors());
 app.use(express.json());
 app.use(loginRoute)

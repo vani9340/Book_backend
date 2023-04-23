@@ -6,4 +6,4 @@ const userSchema =new mongoose.Schema({
   },{timestamps:true});
   const users = mongoose.model("users", userSchema);
 
-  module.exports= users
+  module.exports = users
